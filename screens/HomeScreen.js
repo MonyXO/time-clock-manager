@@ -3,14 +3,20 @@ import { SafeAreaView, Text, View, StyleSheet, StatusBar, Image, Touchable, Touc
 import Header from '../components/homeScreen/Header'
 import TimeClock from '../components/homeScreen/TimeClock'
 import ScheduleViewer from '../components/homeScreen/ScheduleViewer'
+import DateHeader from '../components/homeScreen/DateHeader'
+import TimeClockVersion2 from '../components/homeScreen/TimeClockVersion2'
+import BottomTabs, { bottomTabIcons } from '../components/homeScreen/BottomTabs'
 
 export default function HomeScreen() {
     return (
         <SafeAreaView style={styles.safe}>
             <StatusBar barStyle='dark-content' />
             <Header />
-            <TimeClock />
+            <DateHeader />
+            {/*<TimeClock />*/}
+            <TimeClockVersion2 />
             <ScheduleViewer />
+            <BottomTabs icons={bottomTabIcons} />
         </SafeAreaView>
     )
 }
