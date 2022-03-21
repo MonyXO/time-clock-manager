@@ -1,6 +1,5 @@
 import React from 'react'
 import { Text, SafeAreaView, StyleSheet, FlatList, View } from 'react-native'
-import BottomTabs, { bottomTabIcons } from '../components/homeScreen/BottomTabs'
 import TeamHeader from '../components/teamScreen/TeamHeader'
 import TimeClockVersion2 from '../components/homeScreen/TimeClockVersion2'
 import ScheduledTeam from '../components/teamScreen/ScheduledTeam'
