@@ -25,7 +25,9 @@ export default function BottomTabs({icons}) {
         <View style={styles.wrapper}>
             <View style={styles.container}>
                 {icons.map((icon, index) => (
+                <TouchableOpacity onPress={() => navigation.push('Home')}>
                     <Icon key={index} icon={icon} />
+                </TouchableOpacity>
                 ))}
             </View>
         </View>

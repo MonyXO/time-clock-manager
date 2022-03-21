@@ -46,7 +46,6 @@ export default function TimeClock() {
                         fontSize: 20,
                         fontWeight: '500',
                         color: 'white',
-                        textDecorationLine: 'underline',
                     }}>Clock In</Text>
                 </View>
             </TouchableOpacity>

@@ -1,20 +1,27 @@
 import React from 'react'
-import { Text, SafeAreaView, StyleSheet } from 'react-native'
+import { Text, SafeAreaView, StyleSheet, FlatList, View } from 'react-native'
 import BottomTabs, { bottomTabIcons } from '../components/homeScreen/BottomTabs'
 import TeamHeader from '../components/teamScreen/TeamHeader'
+import TimeClockVersion2 from '../components/homeScreen/TimeClockVersion2'
+import ScheduledTeam from '../components/teamScreen/ScheduledTeam'
+import UnscheduledTeam from '../components/teamScreen/UnscheduledTeam'
 
-export default function TeamScreen() {
+// Team Screen
+export default function TeamScreen({navigation}) {
+
     return (
-        <SafeAreaView style={styles.safe}>
+        <SafeAreaView style={styles.container}>
+            {/* App Structure */}
             <TeamHeader />
-            <Text>Team Screen</Text>
-            <BottomTabs icons={bottomTabIcons}/>
+            <ScheduledTeam />
+            <UnscheduledTeam />
+            {/*<BottomTabs icons={bottomTabIcons}/>*/}
         </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
-    safe: {
+    container: {
         backgroundColor: '#e4e7e4',
         flex: 1,
     },

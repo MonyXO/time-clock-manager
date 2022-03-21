@@ -1,7 +1,9 @@
 import React from 'react'
-import SignedInStack from './navigation';
-import HomeScreen from './screens/HomeScreen';
+import { NavigationContainer } from '@react-navigation/native'
+import BottomNav from './navigation/BottomNav'
 
 export default function App() {
-  return /*<SignedInStack />*/<HomeScreen />
+  return (
+      <BottomNav />
+    )
 }
