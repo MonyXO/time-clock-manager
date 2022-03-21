@@ -1,6 +1,6 @@
 import React from 'react'
 import { SafeAreaView, Text, View, StyleSheet, StatusBar, Image, Touchable, TouchableOpacity } from 'react-native'
-import Header from '../components/homeScreen/Header'
+import HomeHeader from '../components/homeScreen/HomeHeader'
 import TimeClock from '../components/homeScreen/TimeClock'
 import ScheduleViewer from '../components/homeScreen/ScheduleViewer'
 import DateHeader from '../components/homeScreen/DateHeader'
@@ -11,7 +11,7 @@ export default function HomeScreen() {
     return (
         <SafeAreaView style={styles.safe}>
             <StatusBar barStyle='dark-content' />
-            <Header />
+            <HomeHeader />
             <DateHeader />
             {/*<TimeClock />*/}
             <TimeClockVersion2 />

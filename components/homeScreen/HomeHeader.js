@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
 
-export default function Header() {
+export default function HomeHeader() {
     return(
         <View style={styles.container}>
             <TouchableOpacity>
@@ -13,12 +13,12 @@ export default function Header() {
             <Text style={{
                 position: 'relative',
                 textAlign: 'center',
-                marginTop: 15,
-                marginLeft: 30,
-                fontSize: 28,
+                marginTop: 20,
+                marginLeft: 25,
+                fontSize: 20,
                 color: 'white',
                 fontWeight: '600'
-            }}>Welcome, Thomas!</Text>
+            }}>Home</Text>
         </View>
     )
 }
