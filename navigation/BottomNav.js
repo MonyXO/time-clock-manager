@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { SafeAreaView } from 'react-native'
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
@@ -38,7 +37,11 @@ export default function BottomNav() {
 
                         return <Ionicons name={iconName} size={size} color={color} />
                     },
-                })}>
+                })}
+                tabBarOptions={{
+                    activeTintColor: '#f56423',
+                }}
+                >
                 
                 <Tab.Screen name={homeName} component={HomeScreen} />
                 <Tab.Screen name={teamName} component={TeamScreen} />
