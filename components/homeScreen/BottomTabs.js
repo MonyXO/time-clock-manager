@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 
 export const bottomTabIcons = [
     {
@@ -34,7 +34,10 @@ export default function BottomTabs({icons}) {
 
 const styles = StyleSheet.create({
     wrapper: {
-
+        position: 'absolute',
+        width: '100%',
+        bottom: '0%',
+        zIndex: 100,
     },
 
     container: {
