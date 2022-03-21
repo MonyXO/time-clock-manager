@@ -74,7 +74,13 @@ const DATA = [
 
 const Item = ({ title }) => (
     <View style={styles.item}>
-        <Text style={styles.title}>{title}</Text>
+        <View style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between'
+        }}>
+          <Text style={styles.title}>{title}</Text>
+          <View style={styles.statusIndicator}></View>
+        </View>
         <View style={styles.listLines}></View>
     </View>
 );
@@ -132,7 +138,8 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         borderColor: '#99a29b',
         borderWidth: 1,
-        marginLeft: 30,
+        marginRight: 20,
+        marginTop: 5,
     },
 /*
 #2ac725 green color 

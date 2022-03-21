@@ -4,7 +4,6 @@ import HomeHeader from '../components/homeScreen/HomeHeader'
 import ScheduleViewer from '../components/homeScreen/ScheduleViewer'
 import DateHeader from '../components/homeScreen/DateHeader'
 import TimeClockVersion2 from '../components/homeScreen/TimeClockVersion2'
-import BottomTabs, { bottomTabIcons } from '../components/homeScreen/BottomTabs'
 
 export default function HomeScreen({navigation}) {
     return (
