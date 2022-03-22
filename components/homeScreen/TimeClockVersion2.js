@@ -1,10 +1,54 @@
 import React from 'react'
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, Modal } from 'react-native'
+import { useState } from 'react';
 
 export default function TimeClock() {
+    const [modalVisible, setModalVisible] = useState(false);
     return(
 
         <View style={styles.container}>
+
+            {/* CLOCK IN CONFIRMATION SREEN */}
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                    Alert.alert("Modal has been closed.");
+                setModalVisible(!modalVisible);
+                }}
+            >
+                <View style={styles.centeredView}>
+                    <View style={styles.modalView}>
+                        <Text style={styles.slideText}>Confirm Clock In:</Text>
+
+                        <View style={{height: '40%', width: '50%', justifyContent: 'center'}}>
+                            <Text style={{
+                                textAlign: 'center',
+                                fontSize: 48,
+                                color: '#99a29b',
+                                fontWeight: '800',
+                            }}>{getCurrentTime()}</Text>
+                        </View>
+
+                        <View style={{flexDirection: 'row', }}>
+                            <TouchableOpacity
+                                style={[styles.confirmButton, styles.buttonClose]}
+                                onPress={() => setModalVisible(!modalVisible)}
+                            >
+                                <Text style={styles.textStyle}>Cancel</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={[styles.confirmButton, styles.buttonClose]}
+                                onPress={() => setModalVisible(!modalVisible)}
+                            >
+                                <Text style={styles.textStyle}>Clock In</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </View>
+            </Modal>
+
 
             {/* UPPER CONTAINER */}
             <View style={styles.upperContainer}>
@@ -37,20 +81,27 @@ export default function TimeClock() {
             </View>
 
             {/* CLOCK IN BUTTON */}
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => setModalVisible(true)}>
                 <View style={styles.button}>
 
                     {/* CLOCK IN TEXT */}
                     <Text style={{
                         textAlign: 'center',
                         fontSize: 20,
-                        fontWeight: '500',
+                        fontWeight: 'bold',
                         color: 'white',
                     }}>Clock In</Text>
                 </View>
             </TouchableOpacity>
         </View>
     )
+}
+
+const getCurrentTime=()=>{
+    var hour = new Date().getHours();
+    var minute = new Date().getMinutes();
+
+    return hour + ':' + minute;
 }
 
 const styles = StyleSheet.create({
@@ -122,5 +173,56 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginRight: 25,
         borderRadius: 20,
+    },
+
+    confirmButton: {
+        backgroundColor: '#f56423',
+        borderRadius: 20,
+        justifyContent: 'center',
+        height: 40,
+        width: '50%',
+        elevation: 2,
+        margin: 5,
+      },
+
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+    },
+
+    modalView: {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+        left: 0,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 15,
+        height: 225,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: -1
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5,
+        zIndex: 100
+    },
+
+    textStyle: {
+        color: "white",
+        fontSize: 20,
+        fontWeight: "bold",
+        textAlign: "center"
+    },
+
+    slideText: {
+        fontSize: 32,
+        fontWeight: 'bold',
+        color: '#99a29b',
     }
 }) 

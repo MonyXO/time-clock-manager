@@ -15,11 +15,7 @@ const Tab = createBottomTabNavigator();
 export default function BottomNav() {
 
     return(
-        <NavigationContainer style={{
-            shadowOpacity: .30,
-            shadowRadius: 2,
-            shadowOffset: {height: -1, width: 1},
-        }}>
+        <NavigationContainer>
             <Tab.Navigator 
                 initialRouteName={homeName} 
                 screenOptions={({route}) => ({
@@ -40,6 +36,16 @@ export default function BottomNav() {
                 })}
                 tabBarOptions={{
                     activeTintColor: '#f56423',
+                }}
+
+                style={{
+                    shadowColor: "#000",
+                    shadowOffset: {
+                    width: 0,
+                    height: -1
+                    },
+                    shadowOpacity: 0.25,
+                    shadowRadius: 4,
                 }}
                 >
                 
