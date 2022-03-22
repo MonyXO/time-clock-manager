@@ -22,7 +22,7 @@ Time Clock Manager Project
   
     expo whoami
     
-## Next, clone github repository in a directory of your choice by running:
+## Next, login to git and clone github repository in a directory of your choice by running:
 
     git clone https://github.com/MonyXO/time-clock-manager.git
   
