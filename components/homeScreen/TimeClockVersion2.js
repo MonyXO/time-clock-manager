@@ -100,8 +100,13 @@ export default function TimeClock() {
 const getCurrentTime=()=>{
     var hour = new Date().getHours();
     var minute = new Date().getMinutes();
-
-    return hour + ':' + minute;
+    if(minute == 0) {
+        return hour + ':00' + 'am';
+    } else if (minute > 0 && minute < 10) {
+        return hour + ':0' + minute + 'am';
+    } else {
+        return hour + ':' + minute + 'am';
+    }
 }
 
 const styles = StyleSheet.create({
@@ -221,8 +226,8 @@ const styles = StyleSheet.create({
     },
 
     slideText: {
-        fontSize: 32,
-        fontWeight: 'bold',
-        color: '#99a29b',
+        fontSize: 24,
+        fontWeight: '700',
+        color: '#f56423',
     }
 }) 
